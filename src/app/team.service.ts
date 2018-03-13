@@ -5,9 +5,6 @@ import { TEAMS } from './team-list';
 
 import { MessageService } from './message.service';
 
-import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-
 @Injectable()
 export class TeamService {
 
