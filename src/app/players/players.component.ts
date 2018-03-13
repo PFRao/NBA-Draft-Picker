@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Player } from '../player';
 import { PLAYERS } from '../player-roster';
+
 import { PlayerService } from '../player.service';
 
 @Component({
@@ -27,6 +29,16 @@ export class PlayersComponent implements OnInit {
 
   onSelect(player: Player): void {
     this.selectedPlayer = player;
+  }
+
+  removePlayer(event) {
+    console.log('event', typeof event, event);
+    this.players.forEach((el, idx) => {
+      if (el.id === event.id) {
+        this.players.splice(idx, 1);
+      }
+    });
+    this.selectedPlayer = undefined;
   }
 
 }

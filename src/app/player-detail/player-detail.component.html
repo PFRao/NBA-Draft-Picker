@@ -9,7 +9,12 @@
   </div>
   <div>
     <label>Assign Team:
-      <input [(ngModel)]="player.name" placeholder="name">
+      <select name="team" [(ngModel)]="team">
+        <option *ngFor="let team of teams" [value]="team">
+          {{team}}
+        </option>
+      </select>
     </label>
+    <button (click)="assignPlayer()">Assign</button>
   </div>
 </span>

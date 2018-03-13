@@ -16,8 +16,12 @@ export class TeamService {
   constructor(private messageService: MessageService) { }
 
   addPlayer(player: Player, team: string): void {
-    this.messageService.add('TeamService: ${player.name} added to ${team}');
-    this.teams[team].push(player);
+    this.messageService.add('TeamService: ' + player.name + ' added to ' + team);
+    this.teams.get(team).push(player);
+  }
+
+  getTeamNames(): string[] {
+    return Array.from(this.teams.keys());
   }
 
 }
