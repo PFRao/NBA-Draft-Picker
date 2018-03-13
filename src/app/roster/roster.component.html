@@ -1,0 +1,11 @@
+<h2>Roster</h2>
+<ul class="teams">
+  <li *ngFor="let team of teamNames">
+    {{team}}
+    <ul class="teams">
+      <li *ngFor="let player of teams.get(team)">
+        {{player.name}}
+      </li>
+    </ul>
+  </li>
+</ul>

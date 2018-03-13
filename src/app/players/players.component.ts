@@ -32,7 +32,6 @@ export class PlayersComponent implements OnInit {
   }
 
   removePlayer(event) {
-    console.log('event', typeof event, event);
     this.players.forEach((el, idx) => {
       if (el.id === event.id) {
         this.players.splice(idx, 1);

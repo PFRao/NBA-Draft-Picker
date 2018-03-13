@@ -11,6 +11,8 @@ import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
 import { TeamService } from './team.service';
+import { AppRoutingModule } from './/app-routing.module';
+import { RosterComponent } from './roster/roster.component';
 
 
 @NgModule({
@@ -18,11 +20,13 @@ import { TeamService } from './team.service';
     AppComponent,
     PlayersComponent,
     PlayerDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    RosterComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [PlayerService, MessageService, TeamService],
   bootstrap: [AppComponent]

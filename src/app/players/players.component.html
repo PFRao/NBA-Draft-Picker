@@ -1,5 +1,5 @@
 <div *ngIf="players.length">
-  <h2>Roster</h2>
+  <h2>Available Players</h2>
   <ul class="players">
     <li *ngFor="let player of players" (click)="onSelect(player)" [class.selected]="player === selectedPlayer">
       <span class="badge">{{player.id}}</span> {{player.name}}
@@ -10,4 +10,5 @@
 </div>
 <div *ngIf="!players.length">
   All players have been assigned.
+  <a routerLink="/roster">View Roster</a>
 </div>

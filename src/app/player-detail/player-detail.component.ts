@@ -27,6 +27,7 @@ export class PlayerDetailComponent implements OnInit {
   assignPlayer() {
     this.teamService.addPlayer(this.player, this.team);
     this.assignedPlayer.emit(this.player);
+    this.team = '';
   }
 
 }
