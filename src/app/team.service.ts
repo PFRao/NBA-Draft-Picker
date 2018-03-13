@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Player } from './player';
-import { PLAYERS } from './player-roster';
+import { TEAMS } from './team-list';
 
 import { MessageService } from './message.service';
 
@@ -9,13 +9,15 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 
 @Injectable()
-export class PlayerService {
+export class TeamService {
+
+  teams: Map<string, Player[]> = TEAMS;
 
   constructor(private messageService: MessageService) { }
 
-  getPlayers(): Observable<Player[]> {
-    this.messageService.add('PlayerService: fetched players');
-    return of(PLAYERS);
+  addPlayer(player: Player, team: string): void {
+    this.messageService.add('TeamService: ${player.name} added to ${team}');
+    this.teams[team].push(player);
   }
 
 }

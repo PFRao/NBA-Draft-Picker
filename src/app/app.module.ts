@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { MessageService } from './message.service';
+import { TeamService } from './team.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { MessageService } from './message.service';
     BrowserModule,
     FormsModule
   ],
-  providers: [PlayerService, MessageService],
+  providers: [PlayerService, MessageService, TeamService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
